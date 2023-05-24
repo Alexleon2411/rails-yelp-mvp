@@ -1,0 +1,18 @@
+<h2><%= @restaurant.name %></h2>
+<p>
+<%= @restaurant.address %>
+</p>
+<p>
+<%= @restaurant.category %>
+</p>
+<p>Review</p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "create a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+
+<%= link_to "all restaurant", restaurants_path, class: "btn btn-warning"%>
